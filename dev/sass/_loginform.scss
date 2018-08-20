@@ -1,0 +1,54 @@
+.form {
+    padding: 0 60px;
+    border-left: $border;
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .link {
+color: $color_btn-fill;
+    }
+}
+
+.label,
+.text_field {
+    display: block;
+}
+
+.label {
+    margin-bottom: 24px;
+}
+
+.text_field {
+    border: $border;
+    line-height: 40px;
+    width: 300px;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+.link {
+    margin-left: auto;
+    border-bottom: 1px solid currentColor;
+    text-decoration: none;
+}
+
+.checkbox {
+    display: inline-block;
+}
+
+.login.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+
+@media (max-width: 839px) {
+    .form {
+        padding: 0 60px;
+        border-left: 0px solid $color_decor-line;
+    }
+}
