@@ -17,6 +17,7 @@ color: $color_btn-fill;
 }
 
 .label {
+    font-weight: 700;
     margin-bottom: 24px;
 }
 
@@ -29,13 +30,15 @@ color: $color_btn-fill;
 }
 
 .link {
+    font-weight: 700;
     margin-left: auto;
     border-bottom: 1px solid currentColor;
     text-decoration: none;
 }
 
 .checkbox {
-    display: inline-block;
+    // display: inline-block;
+    margin-right: 7px;
 }
 
 .login.container {
@@ -49,6 +52,25 @@ color: $color_btn-fill;
 @media (max-width: 839px) {
     .form {
         padding: 0 60px;
-        border-left: 0px solid $color_decor-line;
+        border-left: 0;
+    }
+}
+
+@media (max-width: 419px) {
+    .form {
+        padding: 0;
+        margin: 0 auto;
+        .text_field {
+            width: 260px;
+        }
+        .label {
+            width: 260px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .login.container {
+            width: 260px;
+            margin: auto;
+        }
     }
 }

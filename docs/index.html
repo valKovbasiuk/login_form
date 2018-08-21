@@ -12,55 +12,56 @@
 </head>
 
 <body>
-    <dialog class="modal" style="display:block">
-        <button class="btn__close"></button>
-        <header class="header">
-            <h1 class="title">Log in to the Site</h1>
-        </header>
-        <main class="main">
-            <section class="login half_column">
-                <form class="form" action="submit">
-                    <label class="label" for="login">
-                        Login
-                        <input class="text_field" id="login" type="text">
-                    </label>
+    <div class="overlay">
+        <dialog class="modal" style="display:block">
+            <button class="btn__close"></button>
+            <header class="header">
+                <h1 class="title">Log in to the Site</h1>
+            </header>
+            <main class="main">
+                <section class="login half_column">
+                    <form class="form" action="submit">
+                        <label class="label" for="login">
+                            Login
+                            <input class="text_field" id="login" type="text">
+                        </label>
 
-                    <label class="label" for="password">
-                        Password
-                        <input class="text_field" id="password" type="password">
-                    </label>
+                        <label class="label" for="password">
+                            Password
+                            <input class="text_field" id="password" type="password">
+                        </label>
 
-                    <label class="label checkbox" for="remember_me">
-                        <input class="checkbox" id="remember_me" type="checkbox"> Remember me
-                    </label>
-                    <div class="login container">
-                        <button class="btn__no-icon submit">Log in</button>
-                        <a class="link" href="#">Need help logging in?</a>
-                    </div>
-                </form>
-            </section>
-            <section class="social half_column">
-                <a class="fb btn__icon-left" href="#">Log in with Facebook
-                    <i class="icon fab fa-facebook-f"></i>
-                </a>
-                <a class="google btn__icon-left" href="#">Log in with Google+
-                    <i class="icon fab fa-google-plus-g"></i>
-                </a>
-            </section>
-
-        </main>
-        <footer class="footer">
-            <span class="footer__message">
-                Don't have an account yet?
-                <h3>
-                    <a class="link" href="#">
-                        Sign up
+                        <label class="label checkbox" for="remember_me">
+                            <input class="checkbox" id="remember_me" type="checkbox"> Remember me
+                        </label>
+                        <div class="login container">
+                            <button class="btn__no-icon submit">Log in</button>
+                            <a class="link" href="#">Need help logging in?</a>
+                        </div>
+                    </form>
+                </section>
+                <section class="social half_column">
+                    <a class="fb btn__icon-left" href="#">Log in with Facebook
+                        <i class="icon fab fa-facebook-f"></i>
                     </a>
-                </h3>
-            </span>
-        </footer>
-    </dialog>
+                    <a class="google btn__icon-left" href="#">Log in with Google+
+                        <i class="icon fab fa-google-plus-g"></i>
+                    </a>
+                </section>
 
+            </main>
+            <footer class="footer">
+                <span class="footer__message">
+                    Don't have an account yet?
+                    <h3>
+                        <a class="link" href="#">
+                            Sign up
+                        </a>
+                    </h3>
+                </span>
+            </footer>
+        </dialog>
+    </div>
 </body>
 
 </html>
