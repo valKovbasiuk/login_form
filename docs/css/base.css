@@ -355,6 +355,7 @@ template {
   color: #252525; }
 
 .half_column {
+  position: relative;
   margin: 40px 0;
   float: right;
   min-width: 420px; }
@@ -362,12 +363,17 @@ template {
 @media (max-width: 839px) {
   .main {
     max-width: 420px; }
-    .main:first-child:after {
-      content: "";
-      height: 0;
-      width: 300px;
-      margin: 0 auto;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.15); } }
+  .half_column:first-child:after {
+    position: absolute;
+    display: block;
+    transform: translateX(-50%);
+    bottom: -40px;
+    left: 50%;
+    content: "";
+    height: 0;
+    min-width: 300px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); } }
 
 @media (max-width: 419px) {
   .modal {
@@ -382,6 +388,11 @@ template {
   .half_column {
     margin: 5vh 0;
     min-width: 100vw; }
+    .half_column:first-child:after {
+      bottom: -30px;
+      min-width: 260px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
   .social.half_column {
     margin: 0; }
   .footer {
