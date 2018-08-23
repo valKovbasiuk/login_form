@@ -7,7 +7,7 @@
         display: table;
     }
     .link {
-color: $color_btn-fill;
+        color: $color_btn-fill;
     }
 }
 
@@ -24,7 +24,7 @@ color: $color_btn-fill;
 .text_field {
     border: $border;
     line-height: 40px;
-    width: 300px;
+    min-width: 300px;
     border-radius: 3px;
     padding: 0 10px;
 }
@@ -38,8 +38,8 @@ color: $color_btn-fill;
 
 .checkbox {
     // display: inline-block;
-    margin-right: 7px;
-    vertical-align: text-top;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
 .login.container {
@@ -47,8 +47,6 @@ color: $color_btn-fill;
     justify-content: space-between;
     align-items: baseline;
 }
-
-
 
 @media (max-width: 839px) {
     .form {
@@ -61,16 +59,16 @@ color: $color_btn-fill;
     .form {
         padding: 0;
         margin: 0 auto;
+        max-width: 260px;
         .text_field {
-            width: 260px;
+            min-width: 260px;
         }
         .label {
-            width: 260px;
             margin-left: auto;
             margin-right: auto;
         }
         .login.container {
-            width: 260px;
+            min-width: 260px;
             margin: auto;
         }
     }

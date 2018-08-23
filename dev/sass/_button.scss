@@ -1,5 +1,5 @@
 [class*='btn__'] {
-    white-space: nowrap;
+    // white-space: nowrap;
     user-select: none;
     text-align: center;
     cursor: pointer;
@@ -23,9 +23,9 @@
     text-decoration: none;
     color: $color_lightest;
     margin-bottom: 20px;
-    margin-left: 60px;
-    margin-right: 60px;
-    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
 }
 
 .btn__no-icon {
@@ -82,7 +82,7 @@
 
 @media (max-width: 419px) {
     .btn__icon-left {
-        width: 260px;
+        max-width: 260px;
         margin: 20px auto;
     }
     .btn__no-icon {

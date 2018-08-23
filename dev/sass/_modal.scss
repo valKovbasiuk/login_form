@@ -18,7 +18,7 @@
     border-top: 2px solid $color_red_accent;
     background-color: #ffffff;
     box-shadow: 1px 2px 1.8px 0.2px rgba(0, 0, 0, 0.25);
-    max-width: 840px;
+    max-width: 841px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -70,12 +70,12 @@
 .half_column {
     margin: 40px 0;
     float: right;
-    max-width: 420px;
+    min-width: 420px;
 }
 
 @media (max-width: 839px) {
     .main {
-        width: 420px;
+        max-width: 420px;
         &:first-child:after {
             content: "";
             height: 0;
@@ -102,7 +102,7 @@
     }
     .half_column {
         margin: 5vh 0;
-        width: 100vw;
+        min-width: 100vw;
     }
     .social.half_column {
         margin: 0;
