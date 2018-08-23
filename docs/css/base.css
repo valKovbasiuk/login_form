@@ -512,7 +512,7 @@ template {
 
 .checkbox {
   margin-right: 5px;
-  vertical-align: middle; }
+  vertical-align: text-top; }
 
 .login.container {
   display: flex;
