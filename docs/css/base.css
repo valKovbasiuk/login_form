@@ -408,7 +408,7 @@ template {
     width: 100vw;
     min-height: unset; } }
 
-[class*='btn__'] {
+[class*="btn__"] {
   user-select: none;
   text-align: center;
   cursor: pointer; }
@@ -448,6 +448,10 @@ template {
   color: #fff;
   margin-left: 0;
   margin-right: 0; }
+
+.submit[disabled] {
+  filter: opacity(0.3);
+  cursor: default; }
 
 .icon {
   font-size: 24px;
@@ -524,6 +528,9 @@ template {
   display: flex;
   justify-content: space-between;
   align-items: baseline; }
+
+input[required].error {
+  border: 2px red solid; }
 
 @media (max-width: 839px) {
   .form {

@@ -1,91 +1,96 @@
-[class*='btn__'] {
-    // white-space: nowrap;
-    user-select: none;
-    text-align: center;
-    cursor: pointer;
+[class*="btn__"] {
+  // white-space: nowrap;
+  user-select: none;
+  text-align: center;
+  cursor: pointer;
 }
 
 .btn__icon-left,
 .btn__no-icon {
-    display: block;
-    position: relative;
-    padding: 13px 32px;
-    border-radius: 3px;
-    margin: auto;
-    font-family: Arial;
-    font-weight: 700;
-    letter-spacing: -0.07px;
+  display: block;
+  position: relative;
+  padding: 13px 32px;
+  border-radius: 3px;
+  margin: auto;
+  font-family: Arial;
+  font-weight: 700;
+  letter-spacing: -0.07px;
 }
 
 .btn__icon-left {
-    padding-left: 50px;
-    padding-right: 20px;
-    text-decoration: none;
-    color: $color_lightest;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 300px;
+  padding-left: 50px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: $color_lightest;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
 }
 
 .btn__no-icon {
-    margin: 0 32px;
+  margin: 0 32px;
 }
 
 .google {
-    background-color: $color_google;
+  background-color: $color_google;
 }
 
 .fb {
-    background-color: $color_fb;
+  background-color: $color_fb;
 }
 
 .submit {
-    background-color: $color_btn-fill;
-    color: $color_lightest;
-    margin-left: 0;
-    margin-right: 0; // float: left;
+  background-color: $color_btn-fill;
+  color: $color_lightest;
+  margin-left: 0;
+  margin-right: 0; // float: left;
+}
+
+.submit[disabled] {
+  filter: opacity(0.3);
+  cursor: default;
 }
 
 .icon {
-    font-size: 24px;
-    line-height: 44px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 17px;
+  font-size: 24px;
+  line-height: 44px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 17px;
 }
 
 .btn__close {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    background-image: url('../img/close-icon.svg');
-    background-color: transparent;
-    background-size: 14px 14px;
-    background-position: center center;
-    border-radius: 50%;
-    border: 0;
-    height: 14px;
-    width: 14px;
-    overflow: hidden;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-image: url("../img/close-icon.svg");
+  background-color: transparent;
+  background-size: 14px 14px;
+  background-position: center center;
+  border-radius: 50%;
+  border: 0;
+  height: 14px;
+  width: 14px;
+  overflow: hidden;
 }
 
 @media (max-width: 839px) {
-    .btn__close {
-        background-size: 25px 25px;
-        height: 25px;
-        width: 25px;
-    }
+  .btn__close {
+    background-size: 25px 25px;
+    height: 25px;
+    width: 25px;
+  }
 }
 
 @media (max-width: 419px) {
-    .btn__icon-left {
-        max-width: 260px;
-        margin: 20px auto;
-    }
-    .btn__no-icon {
-        padding: 10px 20px;
-    }
+  .btn__icon-left {
+    max-width: 260px;
+    margin: 20px auto;
+  }
+  .btn__no-icon {
+    padding: 10px 20px;
+  }
 }
