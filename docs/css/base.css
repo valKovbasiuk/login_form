@@ -305,7 +305,13 @@ template {
   left: 0;
   right: 0; }
 
+.hidden {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease; }
+
 .modal {
+  opacity: 1;
+  transition: opacity 0.3s ease;
   display: block;
   font-family: Arial, sans-serif;
   padding: 0;
@@ -537,6 +543,9 @@ template {
     .form .login.container {
       min-width: 260px;
       margin: auto; } }
+
+.btn_login {
+  margin: 20px auto; }
 
 * {
   box-sizing: border-box; }

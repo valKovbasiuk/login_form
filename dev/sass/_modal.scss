@@ -1,130 +1,137 @@
 .overlay {
-    position: fixed;
-    background-color: rgb(232, 232, 232);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  position: fixed;
+  background-color: rgb(232, 232, 232);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.hidden {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease;
 }
 
 .modal {
-    display: block;
-    font-family: $main-font;
-    padding: 0;
-    border: 0;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-    border-top: 2px solid $color_red_accent;
-    background-color: #ffffff;
-    box-shadow: 1px 2px 1.8px 0.2px rgba(0, 0, 0, 0.25);
-    max-width: 841px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  display: block;
+  font-family: $main-font;
+  padding: 0;
+  border: 0;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 2px solid $color_red_accent;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 1.8px 0.2px rgba(0, 0, 0, 0.25);
+  max-width: 841px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .title {
-    font-family: $main-font;
-    color: $color_main4text;
-    font-size: 31px;
-    font-weight: 700;
-    line-height: 31px;
-    text-align: center;
+  font-family: $main-font;
+  color: $color_main4text;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 31px;
+  text-align: center;
 }
 
 .main {
-    // display: flex;
-    // flex-wrap: wrap;
-    padding: 0;
-    background-color: $color_main-grey;
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  // display: flex;
+  // flex-wrap: wrap;
+  padding: 0;
+  background-color: $color_main-grey;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 .footer {
-    min-height: 88px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h3 {
-        color: $color_text-grey;
-        display: inline;
-        a {
-            color: $color_darkest;
-            display: inline;
-        }
+  min-height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    color: $color_text-grey;
+    display: inline;
+    a {
+      color: $color_darkest;
+      display: inline;
     }
-    &__message {
-        color: $color_text-grey;
-    }
+  }
+  &__message {
+    color: $color_text-grey;
+  }
 }
 
 .help_link {
-    color: $color_btn-fill;
+  color: $color_btn-fill;
 }
 
 .half_column {
-    position: relative;
-    margin: 40px 0;
-    float: right;
-    min-width: 420px;
+  position: relative;
+  margin: 40px 0;
+  float: right;
+  min-width: 420px;
 }
 
 @media (max-width: 839px) {
-    .main {
-        max-width: 420px;
-    }
-    .half_column:first-child:after {
-        position: absolute;
-        display: block;
-        transform: translateX(-50%);
-        bottom: -40px;
-        left: 50%;
-        content: "";
-        height: 0;
-        min-width: 300px;
-        margin: 0 auto;
-        border-bottom: $border;
-    }
+  .main {
+    max-width: 420px;
+  }
+  .half_column:first-child:after {
+    position: absolute;
+    display: block;
+    transform: translateX(-50%);
+    bottom: -40px;
+    left: 50%;
+    content: "";
+    height: 0;
+    min-width: 300px;
+    margin: 0 auto;
+    border-bottom: $border;
+  }
 }
 
 @media (max-width: 419px) {
-    .modal {
-        // width: 100vw;
-        top: 0;
-        transform: none;
-        min-height: 100vh;
-    }
-    .title {
-        font-size: 22px;
-    }
-    .main {
-        width: 100vw;
-        height: calc(100vh - 120px);
-    }
-    .half_column {
-        margin: 5vh 0;
-        min-width: 100vw;
+  .modal {
+    // width: 100vw;
+    top: 0;
+    transform: none;
+    min-height: 100vh;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .main {
+    width: 100vw;
+    height: calc(100vh - 120px);
+  }
+  .half_column {
+    margin: 5vh 0;
+    min-width: 100vw;
 
-        &:first-child:after {
-            bottom: -30px;
-            min-width: 260px;
-            margin: 0 auto;
-            border-bottom: $border;
-        }
+    &:first-child:after {
+      bottom: -30px;
+      min-width: 260px;
+      margin: 0 auto;
+      border-bottom: $border;
     }
-    .social.half_column {
-        margin: 0;
-    }
-    .footer {
-        position: fixed;
-        bottom: 0;
-        height: 59px;
-        width: 100vw;
-        min-height: unset;
-    }
+  }
+  .social.half_column {
+    margin: 0;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    height: 59px;
+    width: 100vw;
+    min-height: unset;
+  }
 }
