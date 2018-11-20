@@ -12,9 +12,9 @@
     .forEach(element => element.addEventListener("click", classHideToggle));
 
   function classHideToggle() {
-    dialog_wdw.style.display === "none"
-      ? (dialog_wdw.style.display = "block")
-      : (dialog_wdw.style.display = "none");
+    // dialog_wdw.style.display === "none"
+    //   ? (dialog_wdw.style.display = "block")
+    //   : (dialog_wdw.style.display = "none");
     dialog_wdw.classList.toggle("hidden");
   }
 })();
