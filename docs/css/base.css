@@ -529,8 +529,14 @@ template {
   justify-content: space-between;
   align-items: baseline; }
 
+input[required] {
+  border: 2px transparent solid; }
+
 input[required].error {
-  border: 2px red solid; }
+  border: 2px red solid !important; }
+
+input[required].valid {
+  border: 2px green solid; }
 
 @media (max-width: 839px) {
   .form {
@@ -556,3 +562,11 @@ input[required].error {
 
 * {
   box-sizing: border-box; }
+
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 5px 5px gray; }
