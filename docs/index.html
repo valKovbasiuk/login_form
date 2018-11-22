@@ -16,7 +16,9 @@
 
   <body>
     <div class="overlay">
-      <button class="btn_login btn__no-icon">Login</button>
+      <button autofocus type="button" class="btn_login btn__no-icon">
+        Login
+      </button>
 
       <dialog class="modal hidden" style="display:block">
         <button type="button" class="btn__close"></button>
@@ -25,24 +27,36 @@
         </header>
         <main class="main">
           <div class="login half_column">
-            <form class="form" action="submit">
+            <form class="form js-form" action="submit">
               <label class="label" for="login">
                 Login (email) <sup>*</sup>
-                <input class="text_field" id="login" type="email" required />
               </label>
+              <input
+                name="login_name"
+                class="text_field"
+                id="login"
+                type="email"
+                required
+              />
 
               <label class="label" for="password">
                 Password <sup>*</sup>
-                <input
-                  class="text_field"
-                  id="password"
-                  type="password"
-                  required
-                />
               </label>
+              <input
+                name="password"
+                class="text_field"
+                id="password"
+                type="password"
+                required
+              />
 
-              <label class="label checkbox" for="remember_me">
-                <input class="checkbox" id="remember_me" type="checkbox" />
+              <label class="label checkbox">
+                <input
+                  name="remember_me"
+                  class="checkbox"
+                  id="remember_me"
+                  type="checkbox"
+                />
                 Remember me
               </label>
               <div class="login container">
