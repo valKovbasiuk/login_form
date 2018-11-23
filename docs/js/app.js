@@ -13,6 +13,8 @@
     // turn off html validation when js can be executed
     form.setAttribute("novalidate", "true");
 
+    let fieldsAreValid = false;
+
     const inputs = document.querySelectorAll(".form__input");
 
     const submitButton = document.querySelector(".js-submit");
@@ -23,10 +25,8 @@
     const inputValidationValidClass = "valid";
 
     inputs.forEach(element =>
-      element.addEventListener("input", function(e) {
-        // console.log(e.target);
-        // console.log(this);
-        validateInput(e.target);
+      element.addEventListener("input", function() {
+        validateInput(this);
       })
     );
 
@@ -52,15 +52,18 @@
     }
 
     function validateInput(currentField) {
-      let isValid;
+      let fieldIsValid = false;
 
       if (currentField.getAttribute("type") === "email") {
-        isValid = validateEmail(currentField);
+        fieldIsValid = validateEmail(currentField);
       } else if (currentField.getAttribute("type") === "password") {
-        isValid = validatePassword(currentField);
+        fieldIsValid = validatePassword(currentField);
+      } else {
+        return;
       }
-
-      decorInputIsValid(currentField, isValid);
+      submitButton.disabled = !fieldIsValid;
+      decorInputIsValid(currentField, fieldIsValid);
+      return fieldIsValid;
     }
 
     function validateEmail(emailField) {
@@ -75,8 +78,8 @@
       return passField.value.length > 3;
     }
 
-    function decorInputIsValid(currentField, isValid) {
-      if (isValid) {
+    function decorInputIsValid(currentField, fieldIsValid) {
+      if (fieldIsValid) {
         currentField.classList.remove(inputValidationErrorClass);
         currentField.classList.add(inputValidationValidClass);
       } else {
