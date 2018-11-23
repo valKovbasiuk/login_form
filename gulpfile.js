@@ -5,16 +5,16 @@ var sass = require("gulp-sass");
 var browserSync = require("browser-sync");
 
 gulp.task("sass", function() {
-  gulp.src("./dev/sass/**/*.scss")
-    .pipe(sass()
-    .on("error", sass.logError)
-  )
+  gulp
+    .src("./dev/sass/**/*.scss")
+    .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("./docs/css"))
-    .pipe(browserSync.reload({stream: true}))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task("serv", function() {
   browserSync.init({
+    browser: "google chrome",
     server: {
       baseDir: "./docs"
     },
@@ -32,6 +32,6 @@ gulp.task("serv", function() {
 //   gulp.parallel('watch', 'serv')
 // ));
 
-gulp.task('default', ['sass', 'serv'], function() {
-  gulp.watch('./dev/sass/**/*.scss', ['sass']);
+gulp.task("default", ["sass", "serv"], function() {
+  gulp.watch("./dev/sass/**/*.scss", ["sass"]);
 });

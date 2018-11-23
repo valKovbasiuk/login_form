@@ -16,12 +16,16 @@
 
   <body>
     <div class="overlay">
-      <button autofocus type="button" class="btn_login btn__no-icon">
+      <button
+        autofocus
+        type="button"
+        class="btn_login btn__no-icon js-btn--open-close"
+      >
         Login
       </button>
 
-      <dialog class="modal hidden" style="display:block">
-        <button type="button" class="btn__close"></button>
+      <dialog class="js-modal modal js-hidden" style="display:block">
+        <button type="button" class="btn__close js-btn--open-close"></button>
         <header class="header">
           <h1 class="title">Log in to the Site</h1>
         </header>
@@ -33,7 +37,7 @@
               </label>
               <input
                 name="login_name"
-                class="text_field"
+                class="text_field form__input"
                 id="login"
                 type="email"
                 required
@@ -44,7 +48,7 @@
               </label>
               <input
                 name="password"
-                class="text_field"
+                class="text_field form__input"
                 id="password"
                 type="password"
                 required
@@ -60,7 +64,7 @@
                 Remember me
               </label>
               <div class="login container">
-                <button class="btn__no-icon submit">Log in</button>
+                <button class="btn__no-icon submit js-submit">Log in</button>
                 <a class="link" href="#">Need help logging in?</a>
               </div>
             </form>

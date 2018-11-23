@@ -1,53 +1,44 @@
+// https://github.com/SvitlanaTsupryk-jul18/Form/blob/af0c4bf8fc1f979236a374fb59761676982fa5c1/assets/js/script.js
+
 (function() {
   jsForm();
 
   function jsForm() {
-    // turn off html validation when js can be executed
-    const forms = document.querySelectorAll(".js-form");
+    const form = document.querySelector(".js-form");
 
-    if (!forms) {
-      return console.log("forms not found");
+    if (!form) {
+      return console.log("form not found");
     }
 
-    forms.forEach(element => element.setAttribute("novalidate", "true"));
+    // turn off html validation when js can be executed
+    form.setAttribute("novalidate", "true");
 
-    // const inputRequired = document.querySelectorAll("input[required]");
-    const emailField = document.querySelector("input[type='email'][required]");
-    const passField = document.querySelector(
-      "input[type='password'][required]"
-    );
+    const inputs = document.querySelectorAll(".form__input");
 
-    // select target form
-    const dialog_wdw = document.querySelector(".modal");
-    const submitButton = document.querySelector("form .submit");
+    const submitButton = document.querySelector(".js-submit");
     submitButton.disabled = true;
 
     // CSS class used to highlight input field did not pass validation
     const inputValidationErrorClass = "error";
     const inputValidationValidClass = "valid";
 
-    emailField.addEventListener("input", function(e) {
-      // console.log("email input detected");
-      validateInput();
-    });
-
-    passField.addEventListener("input", function(e) {
-      // console.log("pass input detected");
-      validateInput();
-    });
-
-    submitButton.addEventListener("click", submitForm);
+    inputs.forEach(element =>
+      element.addEventListener("input", function(e) {
+        // console.log(e.target);
+        // console.log(this);
+        validateInput(e.target);
+      })
+    );
 
     document
-      .querySelectorAll(".btn_login, .btn__close")
+      .querySelectorAll(".js-btn--open-close")
       .forEach(element => element.addEventListener("click", classHideToggle));
 
     function classHideToggle() {
-      // dialog_wdw.style.display === "none"
-      //   ? (dialog_wdw.style.display = "block")
-      //   : (dialog_wdw.style.display = "none");
-      dialog_wdw.classList.toggle("hidden");
+      document.querySelector(".js-modal").classList.toggle("hidden");
     }
+
+    submitButton.addEventListener("click", submitForm);
 
     function submitForm(e) {
       e.preventDefault();
@@ -60,49 +51,40 @@
       }
     }
 
-    function sendData() {}
+    function validateInput(currentField) {
+      let isValid;
 
-    function validateInput() {
-      validateEmail();
-      validatePassword();
-      if (validateEmail() && validatePassword()) {
-        submitButton.disabled = false;
-        return true;
-      } else {
-        submitButton.disabled = true;
-        return false;
+      if (currentField.getAttribute("type") === "email") {
+        isValid = validateEmail(currentField);
+      } else if (currentField.getAttribute("type") === "password") {
+        isValid = validatePassword(currentField);
       }
+
+      decorInputIsValid(currentField, isValid);
     }
 
-    function validateEmail() {
+    function validateEmail(emailField) {
       const emailRe = new RegExp(
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
-      if (
-        // emailField.value.trim() === "" ||
-        !emailRe.test(emailField.value.trim())
-      ) {
-        !emailField.classList.contains(inputValidationErrorClass) &&
-          emailField.classList.add(inputValidationErrorClass);
-        return false;
-      } else {
-        emailField.value = emailField.value.trim();
-        emailField.classList.remove(inputValidationErrorClass);
-        emailField.classList.add(inputValidationValidClass);
-        return true;
-      }
+
+      return emailRe.test(emailField.value.trim());
     }
 
-    function validatePassword() {
-      if (passField.value.length < 4) {
-        !passField.classList.contains(inputValidationErrorClass) &&
-          passField.classList.add(inputValidationErrorClass);
-        return false;
+    function validatePassword(passField) {
+      return passField.value.length > 3;
+    }
+
+    function decorInputIsValid(currentField, isValid) {
+      if (isValid) {
+        currentField.classList.remove(inputValidationErrorClass);
+        currentField.classList.add(inputValidationValidClass);
       } else {
-        passField.classList.remove(inputValidationErrorClass);
-        passField.classList.add(inputValidationValidClass);
-        return true;
+        !currentField.classList.contains(inputValidationErrorClass) &&
+          currentField.classList.add(inputValidationErrorClass);
       }
     }
   }
+
+  function sendData() {}
 })();
